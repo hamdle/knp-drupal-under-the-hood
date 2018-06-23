@@ -3,4 +3,4 @@ dino_says:
   defaults:
     _controller: Drupal\dino_roar\Controller\RoarController::roar
   requirements:
-    _permissions: 'access content'
+    _permission: 'access content'
