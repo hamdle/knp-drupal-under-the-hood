@@ -21,11 +21,11 @@ class RoarController extends ControllerBase
 
   public function roar($count)
   {
-    $keyValueStore = $this->keyValue('dino');
+    //$keyValueStore = $this->keyValue('dino');
 
-    //$roar = $this->roarGenerator->getRoar($count);
+    $roar = $this->roarGenerator->getRoar($count);
     //$keyValueStore->set('roar_string', $roar);
-    $roar = $keyValueStore->get('roar_string');
+    //$roar = $keyValueStore->get('roar_string');
 
     $this->loggerFactoryService->get('default')
       ->debug($roar);
@@ -35,6 +35,7 @@ class RoarController extends ControllerBase
 
   public static function create(ContainerInterface $container)
   {
+    // RearGenerator service object get instantiated here
     $roarGenerator = $container->get('dino_roar.roar_generator');
     $loggerFactoryService = $container->get('logger.factory');
 
